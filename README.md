@@ -1,5 +1,7 @@
 # FlexSeal
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Falexslee%2FFlexSeal%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/alexslee/FlexSeal) [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Falexslee%2FFlexSeal%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/alexslee/FlexSeal)
+
 A lifecycle tracking tool to find potential memory leaks during development and testing.
 
 ## Overview
