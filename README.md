@@ -17,6 +17,7 @@ _will be added when DocC is done_
 
 ## TODOs
 
-- [ ] DocC and clean up comments, idjit
+- [x] DocC and clean up comments, idjit
+    - [ ] assets for the docs, you lazy four-eyed pile of skin and bones
 - [ ] address the irony of not having a proper clear method that deallocates FlexSeal without leaving memory leaks of its own, because Alex is a piece of shit
 - [ ] unit tests :upside_down_face:
