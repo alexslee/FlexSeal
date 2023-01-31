@@ -21,11 +21,13 @@ enum FlexSealStatus {
 class FlexSealViewModel: ObservableObject {
   static var shared = FlexSealViewModel()
 
-  @Published var canShowFlexSealView = false {
+  @Published var isFlexSealVisible = false {
     didSet {
       DispatchQueue.main.async { [weak self] in
         guard let self else { return }
-        FlexSeal.isVisible = self.canShowFlexSealView
+        if !self.isFlexSealVisible {
+          FlexSeal.hide()
+        }
       }
     }
   }
@@ -36,6 +38,8 @@ class FlexSealViewModel: ObservableObject {
   /**
    Maintain a lock to provide write safety when multiple objects attempt to update their tracking status.
    Using a `NSRecursiveLock` ensures objects can update on the same thread without a deadlock.
+
+   "Thread-safe code is trivial and you are a bad engineer" - Ding Yuan, every second of every lecture; if you know, you know.
    */
   private let lock = NSRecursiveLock()
 

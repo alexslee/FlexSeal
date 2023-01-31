@@ -24,7 +24,7 @@ struct FlexSealHUD: View {
       .scaledToFit()
       .frame(width: Self.iconSideLength, height: Self.iconSideLength)
       .foregroundColor(viewModel.leakStatus == .leaky ? .warning : .success)
-      .onTapGesture(count: 2, perform: { viewModel.canShowFlexSealView.toggle() })
+      .onTapGesture(count: 2, perform: { viewModel.isFlexSealVisible = false })
       .onTapGesture(count: 1, perform: { self.showing.toggle() })
   }
 }

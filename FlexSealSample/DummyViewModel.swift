@@ -24,8 +24,6 @@ class DummyViewModel: ObservableObject {
   @Published var growerNotAShower = [TrackMeLikeOneOfYourFrenchGirls]()
   @Published var maxBeforeLeak = 8.0
 
-  private var isFlexSealActive = false
-
   func grow() {
     growerNotAShower.append(TrackMeLikeOneOfYourFrenchGirls())
   }
@@ -40,10 +38,10 @@ class DummyViewModel: ObservableObject {
   }
 
   func toggleFlexSeal() {
+    FlexSeal.isFlexSealVisible.toggle()
     // holy toxic architecture referencing UI code in the view model batman
     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-      isFlexSealActive.toggle()
-      isFlexSealActive ? FlexSeal.start(in: windowScene) : FlexSeal.hide()
+      FlexSeal.isFlexSealVisible ? FlexSeal.start(in: windowScene) : FlexSeal.hide()
     } else {
       fatalError("what in the name of our lord and saviour")
     }

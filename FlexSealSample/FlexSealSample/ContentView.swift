@@ -10,6 +10,7 @@ import SwiftUI
 // the most contrived example you'll ever see
 
 struct ContentView: View {
+  // the FlexSeal-related logic is inside this view model, go to that file and check it out.
   @ObservedObject var viewModel: DummyViewModel
 
   var body: some View {

@@ -9,10 +9,17 @@ import SwiftUI
 import UIKit
 
 public struct FlexSeal {
-  static var isVisible = false
-
   private static var passThroughWindow: PassThroughWindow?
   private static let nonPassThroughTag = 666
+
+  /**
+   Whether or not the tool is currently visible (created since you can dismiss the tool through its own code, so this
+   lets you update your own custom toggles/buttons/etc. properly).
+   */
+  public static var isFlexSealVisible: Bool {
+    get { FlexSealViewModel.shared.isFlexSealVisible }
+    set { FlexSealViewModel.shared.isFlexSealVisible = newValue }
+  }
 
   /**
    _Do you really need documentation for this?_ -- er, I mean, starts up the FlexSeal window in the given scene. Will
@@ -41,7 +48,7 @@ public struct FlexSeal {
    at any point.
    */
   public static func hide() {
-    passThroughWindow?.isHidden = true
+    DispatchQueue.main.async { passThroughWindow?.isHidden = true }
   }
 
   // TODO: support clearing properly without memory leaks of your own you ironic sack of shit
